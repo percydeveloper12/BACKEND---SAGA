@@ -31,3 +31,19 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Logs
+*.log
+
+# Archivos temporales
+*.tmp
+*.bak
+
+# Archivos sensibles
+*.env
+application-*.properties
+application-*.yml
+
+# JAR/WAR compilados
+*.jar
+*.war
