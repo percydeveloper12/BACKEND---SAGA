@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Centro de Ayuda - Reclutamiento</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-white shadow-lg h-screen fixed">
+    <div class="p-6 text-center border-b">
+      <h2 class="text-xl font-bold text-green-600">Reclutamiento</h2>
+    </div>
+    <nav class="mt-6">
+      <ul class="space-y-2 px-4">
+        <li><a href="/dashboard" class="flex items-center p-2 hover:bg-green-100 text-gray-700">📊 <span class="ml-2">Dashboard</span></a></li>
+        <li><a href="/perfil" class="flex items-center p-2 hover:bg-green-100 text-gray-700">👤 <span class="ml-2">Ver Perfil</span></a></li>
+        <li><a href="/postulaciones" class="flex items-center p-2 hover:bg-green-100 text-gray-700">📨 <span class="ml-2">Postulaciones</span></a></li>
+        <li><a href="/ayuda" class="flex items-center p-2 bg-green-200 font-bold text-gray-800 rounded">❓ <span class="ml-2">Ayuda</span></a></li>
+        <li><a href="/logout" class="flex items-center p-2 hover:bg-red-100 text-red-600">🚪 <span class="ml-2">Cerrar Sesión</span></a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Contenido principal -->
+  <main class="ml-64 p-8 w-full">
+    <h1 class="text-2xl font-bold text-green-700 mb-6">❓ Centro de Ayuda</h1>
+
+    <!-- Preguntas Frecuentes -->
+    <div class="bg-white p-6 rounded shadow mb-8">
+      <h2 class="text-lg font-semibold mb-4">📌 Preguntas Frecuentes</h2>
+      <ul class="space-y-4 text-gray-700">
+        <li>
+          <strong>¿Cómo me postulo a una vacante?</strong><br>
+          Debes iniciar sesión con tu cuenta, seleccionar una vacante disponible y hacer clic en "Postular".
+        </li>
+        <li>
+          <strong>¿Puedo editar mi perfil?</strong><br>
+          Sí. Ve a "Ver Perfil" y actualiza tus datos personales, CV o experiencia laboral.
+        </li>
+        <li>
+          <strong>¿Puedo postular a más de una vacante?</strong><br>
+          Sí, puedes postular a todas las vacantes que desees mientras estén activas.
+        </li>
+        <li>
+          <strong>¿Cómo sabré si fui seleccionado?</strong><br>
+          Si tu postulación es aceptada, recibirás una notificación dentro del sistema o por correo.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Contacto -->
+    <div class="bg-white p-6 rounded shadow">
+      <h2 class="text-lg font-semibold mb-4">📬 ¿Necesitas más ayuda?</h2>
+      <p class="mb-4 text-gray-700">Si tienes problemas técnicos o necesitas asistencia personalizada, puedes escribirnos:</p>
+      <ul class="text-gray-700 space-y-2">
+        <li>📧 Correo: <a href="mailto:soporte@sagafalabella.com" class="text-blue-600 underline">soporte@sagafalabella.com</a></li>
+        <li>📞 Teléfono: (01) 555-1234 (Lunes a Viernes, 9:00 a 18:00)</li>
+      </ul>
+    </div>
+  </main>
+
+</body>
+</html>

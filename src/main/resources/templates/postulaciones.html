@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="es"
+      layout:decorate="~{layout.html}">
+
+<head>
+  <title>Postulaciones Recibidas</title>
+</head>
+
+<body>
+<main layout:fragment="contenido">
+  <h2 class="text-2xl font-bold mb-4">📋 Postulaciones Registradas</h2>
+
+  <table class="table table-bordered table-striped">
+    <thead class="table-success">
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Vacante</th>
+        <th>Estado</th>
+        <th>Fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="postulacion : ${postulaciones}">
+        <td th:text="${postulacion.id}">1</td>
+        <td th:text="${postulacion.perfilPostulante.nombre}">Nombre</td>
+        <td th:text="${postulacion.perfilPostulante.apellido}">Apellido</td>
+        <td th:text="${postulacion.vacante.titulo}">Vacante</td>
+        <td th:text="${postulacion.estado}">Estado</td>
+        <td th:text="${postulacion.fechaPostulacion}">Fecha</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <a href="/proyecto" class="btn btn-secondary mt-4">← Volver</a>
+</main>
+</body>
+</html>

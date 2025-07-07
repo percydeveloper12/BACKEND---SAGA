@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>SOFTWARE DE RECLUTAMIENTO - SAGA FALABELLA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-white shadow h-screen fixed">
+    <div class="p-6 text-center border-b">
+      <h2 class="text-xl font-bold text-green-600">SAGA FALABELLA</h2>
+    </div>
+
+    <nav class="mt-6">
+      <ul class="space-y-2 px-4">
+        <li>
+          <a href="/dashboard" class="flex items-center p-2 rounded hover:bg-green-100 text-gray-700">
+            📊 <span class="ml-2">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="/perfil" class="flex items-center p-2 rounded hover:bg-green-100 text-gray-700">
+            👤 <span class="ml-2">Ver Perfil</span>
+          </a>
+        </li>
+        <li>
+          <a href="/ayuda" class="flex items-center p-2 rounded hover:bg-green-100 text-gray-700">
+            ❓ <span class="ml-2">Ayuda</span>
+          </a>
+        </li>
+        <li>
+          <a href="/logout" class="flex items-center p-2 rounded hover:bg-red-100 text-red-600">
+            🚪 <span class="ml-2">Cerrar Sesión</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Contenido Principal -->
+  <main class="ml-64 p-8 w-full">
+    <h1 class="text-2xl font-bold mb-4">Vacantes disponibles</h1>
+
+    <!-- Mensaje de éxito -->
+    <div th:if="${param.success != null and param.success[0] == 'postulacion'}"
+         class="bg-green-100 text-green-800 border border-green-300 rounded p-4 mb-4">
+      ✅ <strong>¡Postulación exitosa!</strong> Su postulación ha sido registrada y está en proceso.
+    </div>
+
+    <!-- Buscador -->
+    <form class="mb-4" action="/proyecto" method="get">
+      <div class="flex">
+        <input type="text" name="busqueda" class="flex-grow p-2 border rounded-l" placeholder="Buscar vacantes por título o área...">
+        <button class="bg-green-600 text-white px-4 rounded-r">Buscar</button>
+      </div>
+    </form>
+
+    <!-- Volver si hay búsqueda activa -->
+    <div th:if="${param.busqueda}">
+      <a href="/proyecto" class="text-sm text-blue-600 underline">← Volver a todas las vacantes</a>
+    </div>
+
+    <!-- Tarjetas de áreas -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+      <!-- Área RRHH -->
+      <div class="bg-white rounded-lg shadow p-4">
+        <img src="https://veritasprime.lat/wp-content/uploads/2023/02/Conceptos-basicos-del-area-de-Recursos-Humanos-Veritas-Prime.jpg" class="rounded mb-3" alt="RRHH">
+        <h3 class="text-xl font-semibold">Área de Recursos Humanos</h3>
+        <p class="text-gray-600 text-sm mt-1 mb-3">Gestión del talento, selección, clima laboral y bienestar del personal.</p>
+        <a th:href="@{'/area/RRHH'}" class="bg-blue-500 text-white text-sm px-3 py-1 rounded hover:bg-blue-600">Ver más</a>
+      </div>
+
+      <!-- Área Marketing -->
+      <div class="bg-white rounded-lg shadow p-4">
+        <img src="https://online.univa.mx/hubfs/por-que-es-importante-el-marketing-empresarial.jpg" class="rounded mb-3" alt="Marketing">
+        <h3 class="text-xl font-semibold">Área de Marketing</h3>
+        <p class="text-gray-600 text-sm mt-1 mb-3">Estrategias de comunicación, publicidad y posicionamiento de marca.</p>
+        <a th:href="@{'/area/Marketing'}" class="bg-blue-500 text-white text-sm px-3 py-1 rounded hover:bg-blue-600">Ver más</a>
+      </div>
+
+      <!-- Área Sistemas -->
+      <div class="bg-white rounded-lg shadow p-4">
+        <img src="https://siteck.com.mx/assets/img/gallery/soporte.png" class="rounded mb-3" alt="Sistemas">
+        <h3 class="text-xl font-semibold">Área de Sistemas</h3>
+        <p class="text-gray-600 text-sm mt-1 mb-3">Desarrollo, mantenimiento y soporte de plataformas tecnológicas.</p>
+        <a th:href="@{'/area/Sistemas'}" class="bg-blue-500 text-white text-sm px-3 py-1 rounded hover:bg-blue-600">Ver más</a>
+      </div>
+
+      <!-- Área Logística -->
+      <div class="bg-white rounded-lg shadow p-4">
+        <img src="https://www.gestionlogistica.com.pe/imagenes/zwptzw-im-1.jpg" class="rounded mb-3" alt="Logística">
+        <h3 class="text-xl font-semibold">Área de Logística</h3>
+        <p class="text-gray-600 text-sm mt-1 mb-3">Coordinación de inventario, almacén, distribución y transporte.</p>
+        <a th:href="@{'/area/Logística'}" class="bg-blue-500 text-white text-sm px-3 py-1 rounded hover:bg-blue-600">Ver más</a>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
